@@ -22,10 +22,17 @@ export const useNetworkConnectivity = () => {
     checkInitialConnectivity();
 
     // Subscribe to connectivity changes
-    const unsubscribe = NetInfo.addEventListener(state => {
-      setIsConnected(state.isConnected);
-      setIsLoading(false);
-    });
+    const unsubscribe = NetInfo.addEventListener(
+      (state: {
+        isConnected:
+          | boolean
+          | ((prevState: boolean | null) => boolean | null)
+          | null;
+      }) => {
+        setIsConnected(state.isConnected);
+        setIsLoading(false);
+      },
+    );
 
     return () => {
       unsubscribe();
