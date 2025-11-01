@@ -1,9 +1,11 @@
-# OSX
-#
+# =========================
+# macOS
+# =========================
 .DS_Store
 
-# Xcode
-#
+# =========================
+# Xcode / iOS
+# =========================
 build/
 *.pbxuser
 !default.pbxuser
@@ -13,20 +15,21 @@ build/
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-xcuserdata
+xcuserdata/
 *.xccheckout
 *.moved-aside
-DerivedData
+DerivedData/
 *.hmap
 *.ipa
 *.xcuserstate
 **/.xcode.env.local
 
-# Android/IntelliJ
-#
+# =========================
+# Android / IntelliJ
+# =========================
 build/
-.idea
-.gradle
+.idea/
+.gradle/
 local.properties
 *.iml
 *.hprof
@@ -35,38 +38,55 @@ local.properties
 !debug.keystore
 .kotlin/
 
-# node.js
-#
+# =========================
+# Node / JavaScript
+# =========================
 node_modules/
-npm-debug.log
-yarn-error.log
+npm-debug.log*
+yarn-error.log*
+yarn.lock
 
-# fastlane
-#
-# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
-# screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://docs.fastlane.tools/best-practices/source-control/
+# =========================
+# Environment files
+# =========================
+.env
+.env.local
+.env.development
+.env.production
+.env.test
 
+# =========================
+# Fastlane
+# =========================
 **/fastlane/report.xml
 **/fastlane/Preview.html
-**/fastlane/screenshots
-**/fastlane/test_output
+**/fastlane/screenshots/
+**/fastlane/test_output/
 
-# Bundle artifact
+# =========================
+# Bundle / Build Artifacts
+# =========================
 *.jsbundle
 
+# =========================
 # Ruby / CocoaPods
+# =========================
 **/Pods/
-/vendor/bundle/
+vendor/bundle/
 
-# Temporary files created by Metro to check the health of the file watcher
+# =========================
+# Metro / React Native
+# =========================
 .metro-health-check*
 
-# testing
-/coverage
+# =========================
+# Testing
+# =========================
+coverage/
 
-# Yarn
+# =========================
+# Yarn v2+ (Berry)
+# =========================
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
