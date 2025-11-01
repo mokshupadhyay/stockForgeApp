@@ -1,13 +1,13 @@
 import React, { FC, JSX, useCallback } from 'react';
 import { View, StatusBar } from 'react-native';
 import { Provider } from 'react-redux';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { store } from './src/store/store';
 import { ThemeProvider, useTheme } from './src/contexts/ThemeContext';
 import { useNetworkConnectivity } from './src/hooks';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AppLoader from './src/components/AppLoader';
 import AppNavigator from './src/navigation/AppNavigator';
-import NoInternetScreen from './src/screens/NoInternetScreen/NoInternetScreen'; // ✅ Direct import
+import NoInternetScreen from './src/screens/NoInternetScreen/NoInternetScreen';
 
 const AppContent: FC = () => {
   const { theme, isDark } = useTheme();
@@ -20,12 +20,12 @@ const AppContent: FC = () => {
 
   const statusBarStyle = isDark ? 'light-content' : 'dark-content';
 
-  // ✅ Show loader while checking connectivity
+  // Show loader while checking connectivity
   if (isLoading) {
     return <AppLoader />;
   }
 
-  // ✅ Show no internet screen - blocks entire app (correct behavior)
+  // Show no internet screen - blocks entire app (correct behavior)
   if (isConnected === false) {
     return (
       <View style={{ flex: 1, backgroundColor: theme.background }}>
@@ -38,7 +38,6 @@ const AppContent: FC = () => {
     );
   }
 
-  // ✅ Show main app only when connected
   return (
     <View style={{ flex: 1, backgroundColor: theme.background }}>
       <StatusBar barStyle={statusBarStyle} backgroundColor={theme.background} />
