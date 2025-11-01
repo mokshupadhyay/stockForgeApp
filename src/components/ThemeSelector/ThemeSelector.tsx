@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createElement, FC } from 'react';
 import { View, Text, TouchableOpacity, Modal } from 'react-native';
 import { X, CheckCircle, Smartphone, Sun, Moon } from 'lucide-react-native';
 import { useThemeSelectorController } from './ThemeSelector.controller';
@@ -9,7 +9,7 @@ interface ThemeSelectorProps {
   onClose: () => void;
 }
 
-const ThemeSelector: React.FC<ThemeSelectorProps> = ({ visible, onClose }) => {
+const ThemeSelector: FC<ThemeSelectorProps> = ({ visible, onClose }) => {
   const { theme, themeMode, themeOptions, handleThemeSelect } =
     useThemeSelectorController({ onClose });
 
@@ -65,7 +65,7 @@ const ThemeSelector: React.FC<ThemeSelectorProps> = ({ visible, onClose }) => {
                     },
                   ]}
                 >
-                  {React.createElement(
+                  {createElement(
                     option.icon === 'Smartphone'
                       ? Smartphone
                       : option.icon === 'Sun'

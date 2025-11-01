@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { View, Text } from 'react-native';
 import { Theme } from '../../constants/theme';
 import { useLastUpdatedBannerController } from './LastUpdatedBanner.controller';
@@ -12,7 +12,7 @@ interface LastUpdatedBannerProps {
   theme: Theme;
 }
 
-const LastUpdatedBanner: React.FC<LastUpdatedBannerProps> = ({
+const LastUpdatedBanner: FC<LastUpdatedBannerProps> = ({
   lastUpdated,
   lastFetched,
   isUsingCachedData = false,

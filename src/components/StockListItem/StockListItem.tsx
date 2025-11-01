@@ -1,4 +1,4 @@
-import React, { FC, memo, useCallback, useMemo } from 'react';
+import React, { createElement, FC, memo, useCallback, useMemo } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { TrendingUp, TrendingDown } from 'lucide-react-native';
 import { Stock } from '../../types/stock';
@@ -15,7 +15,7 @@ interface StockListItemProps {
 const StockListItem: FC<StockListItemProps> = memo(
   ({ stock, onPress, category, formatVolume }) => {
     const { theme } = useTheme();
-    const isPositive = React.useMemo(
+    const isPositive = useMemo(
       () => parseFloat(stock.change_amount) >= 0,
       [stock.change_amount],
     );
@@ -68,7 +68,7 @@ const StockListItem: FC<StockListItemProps> = memo(
               { backgroundColor: getIconColor() + '15' },
             ]}
           >
-            {React.createElement(getCategoryIcon(), {
+            {createElement(getCategoryIcon(), {
               size: 30,
               color: getIconColor(),
               strokeWidth: 2,

@@ -1,31 +1,29 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { View } from 'react-native';
 import { SvgXml } from 'react-native-svg';
 import { Theme } from '../../constants/theme';
 
 interface EmptyWatchlistIllustrationProps {
-    theme: Theme;
-    width?: number;
-    height?: number;
+  theme: Theme;
+  width?: number;
+  height?: number;
 }
 
-export const EmptyWatchlistIllustration: React.FC<EmptyWatchlistIllustrationProps> = ({
-    theme,
-    width = 240,
-    height = 240,
-}) => {
-    // Create theme-aware SVG with modern design
-    const createThemeAwareSvg = () => {
-        const isDark = theme.background === '#0D1117';
+export const EmptyWatchlistIllustration: FC<
+  EmptyWatchlistIllustrationProps
+> = ({ theme, width = 240, height = 240 }) => {
+  // Create theme-aware SVG with modern design
+  const createThemeAwareSvg = () => {
+    const isDark = theme.background === '#0D1117';
 
-        // Theme-aware colors
-        const cardColor = theme.card || theme.surface;
-        const borderColor = theme.border;
-        const textColor = theme.text.tertiary;
-        const accentColor = theme.accent;
-        const shadowColor = isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(0, 0, 0, 0.1)';
+    // Theme-aware colors
+    const cardColor = theme.card || theme.surface;
+    const borderColor = theme.border;
+    const textColor = theme.text.tertiary;
+    const accentColor = theme.accent;
+    const shadowColor = isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(0, 0, 0, 0.1)';
 
-        return `
+    return `
         <svg width="${width}" height="${height}" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- Background circle with gradient -->
             <defs>
@@ -80,11 +78,11 @@ export const EmptyWatchlistIllustration: React.FC<EmptyWatchlistIllustrationProp
             <circle cx="120" cy="165" r="2" fill="${accentColor}" opacity="0.5"/>
         </svg>
         `;
-    };
+  };
 
-    return (
-        <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-            <SvgXml xml={createThemeAwareSvg()} width={width} height={height} />
-        </View>
-    );
-}; 
+  return (
+    <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+      <SvgXml xml={createThemeAwareSvg()} width={width} height={height} />
+    </View>
+  );
+};

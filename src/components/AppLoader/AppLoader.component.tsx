@@ -1,5 +1,5 @@
 // src/components/AppLoader/AppLoader.tsx
-import React, { memo } from 'react';
+import React, { FC, memo } from 'react';
 import { View, ActivityIndicator, StyleSheet, ViewStyle } from 'react-native';
 import { useTheme } from '../../contexts/ThemeContext';
 
@@ -11,7 +11,7 @@ interface AppLoaderProps {
   backgroundColor?: string;
 }
 
-const AppLoader: React.FC<AppLoaderProps> = memo(
+const AppLoader: FC<AppLoaderProps> = memo(
   ({ size = 'large', color, fullScreen = true, style, backgroundColor }) => {
     const { theme } = useTheme();
 

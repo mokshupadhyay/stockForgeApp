@@ -1,4 +1,4 @@
-import React, { FC, memo, useCallback, useMemo } from 'react';
+import React, { createElement, FC, memo, useCallback, useMemo } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { TrendingUp, TrendingDown } from 'lucide-react-native';
 import { Stock } from '../../types/stock';
@@ -91,7 +91,7 @@ export const StockCard: FC<StockCardProps> = memo(
             {stock.ticker}
           </Text>
           <View style={iconContainerStyle}>
-            {React.createElement(getIconComponent(), {
+            {createElement(getIconComponent(), {
               size: 32,
               color: getIconColor(),
               strokeWidth: 2,

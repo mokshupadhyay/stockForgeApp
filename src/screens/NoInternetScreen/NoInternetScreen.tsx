@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { WifiOff, RefreshCw } from 'lucide-react-native';
 import { useTheme } from '../../contexts/ThemeContext';
@@ -8,7 +8,7 @@ interface NoInternetScreenProps {
   onRetry: () => void;
 }
 
-const NoInternetScreen: React.FC<NoInternetScreenProps> = ({ onRetry }) => {
+const NoInternetScreen: FC<NoInternetScreenProps> = ({ onRetry }) => {
   const { theme } = useTheme();
 
   const styles = StyleSheet.create({

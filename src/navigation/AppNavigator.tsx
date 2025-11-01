@@ -1,5 +1,5 @@
 // src/navigation/AppNavigator.tsx
-import React, { Suspense } from 'react';
+import React, { lazy, LazyExoticComponent, memo, Suspense } from 'react';
 import { Platform, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -18,21 +18,21 @@ const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 // Lazy load screens
-const ExploreScreen = React.lazy(
+const ExploreScreen = lazy(
   () => import('../screens/ExploreScreen/ExploreScreen'),
 );
-const WatchlistScreen = React.lazy(
+const WatchlistScreen = lazy(
   () => import('../screens/WatchlistScreen/WatchlistScreen'),
 );
-const ViewAllScreen = React.lazy(
+const ViewAllScreen = lazy(
   () => import('../screens/ViewAllScreen/ViewAllScreen'),
 );
-const StockDetailScreen = React.lazy(
+const StockDetailScreen = lazy(
   () => import('../screens/StockDetailScreen/StockDetailScreen'),
 );
 
 // Higher-order component to wrap lazy components with Suspense
-const withSuspense = (Component: React.LazyExoticComponent<any>) => {
+const withSuspense = (Component: LazyExoticComponent<any>) => {
   return (props: any) => (
     <Suspense fallback={<AppLoader />}>
       <Component {...props} />
@@ -91,7 +91,7 @@ function WatchlistStack() {
 }
 
 // Tab Icon Component
-const TabIcon = React.memo(
+const TabIcon = memo(
   ({
     icon,
     color,

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import {
   View,
   Text,
@@ -18,7 +18,7 @@ const ItemSeparator = () => {
   return <View style={[styles.separator, { backgroundColor: theme.border }]} />;
 };
 
-const ViewAllScreen: React.FC = () => {
+const ViewAllScreen: FC = () => {
   const { theme } = useTheme();
   const {
     type,

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Stock } from '../../types/stock';
 import { StockCard } from '../StockCard';
 import { useTheme } from '../../contexts/ThemeContext';
@@ -9,7 +9,7 @@ interface StockGridItemProps {
   category: 'gainers' | 'losers' | 'active';
 }
 
-const StockGridItem: React.FC<StockGridItemProps> = ({
+const StockGridItem: FC<StockGridItemProps> = ({
   stock,
   onPress,
   category,

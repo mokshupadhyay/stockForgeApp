@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import {
   View,
   Text,
@@ -17,7 +17,7 @@ import { styles } from './StockDetailScreen.styles';
 
 const { width } = Dimensions.get('window');
 
-const StockDetailScreen: React.FC = () => {
+const StockDetailScreen: FC = () => {
   const { theme } = useTheme();
   const {
     stock,

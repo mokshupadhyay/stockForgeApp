@@ -102,85 +102,14 @@ export const useWatchlistPickerModalController = ({
   );
 
   const handleCreateWatchlist = useCallback(() => {
-    if (Platform.OS === 'ios') {
-      Alert.prompt(
-        'Create Watchlist',
-        'Enter watchlist name:',
-        [
-          { text: 'Cancel', style: 'cancel' },
-          {
-            text: 'Create',
-            onPress: async (name?: string) => {
-              if (name && name.trim()) {
-                const watchlistName = name.trim();
+    // Set a default name and open the modal on both platforms
+    setNewWatchlistName('My Watchlist');
+    setShowCreateModal(true);
 
-                // Check if watchlist with same name already exists
-                const existingWatchlist = watchlists.find(
-                  w => w.name.toLowerCase() === watchlistName.toLowerCase(),
-                );
-
-                if (existingWatchlist) {
-                  Alert.alert(
-                    'Watchlist Already Exists',
-                    `A watchlist named "${watchlistName}" already exists. Please choose a different name.`,
-                    [{ text: 'OK' }],
-                  );
-                  return;
-                }
-
-                // Generate unique ID for new watchlist
-                const watchlistId = Date.now().toString();
-                const watchlistStock = convertToWatchlistStock(stock);
-
-                // Create watchlist first
-                dispatch(
-                  createWatchlist({
-                    name: watchlistName,
-                    id: watchlistId,
-                  }),
-                );
-
-                // Then add stock to the newly created watchlist
-                setTimeout(async () => {
-                  dispatch(
-                    addStockToWatchlist({
-                      watchlistId,
-                      stock: watchlistStock,
-                    }),
-                  );
-
-                  // Save to storage
-                  const newWatchlist = {
-                    id: watchlistId,
-                    name: watchlistName,
-                    stocks: [watchlistStock],
-                    isCollapsed: true,
-                    createdAt: new Date().toISOString(),
-                  };
-                  await saveWatchlists([...watchlists, newWatchlist]);
-                }, 100);
-
-                onClose();
-                Alert.alert(
-                  'Success',
-                  `Created "${watchlistName}" and added ${stock.ticker}!`,
-                );
-              }
-            },
-          },
-        ],
-        'plain-text',
-      );
-    } else {
-      // Set default name when opening modal
-      setNewWatchlistName('My Watchlist');
-      setShowCreateModal(true);
-      // Focus input after modal opens
-      setTimeout(() => {
-        inputRef.current?.focus();
-      }, 500);
-    }
-  }, [watchlists, stock, convertToWatchlistStock, dispatch, onClose]);
+    setTimeout(() => {
+      inputRef.current?.focus();
+    }, 500);
+  }, []);
 
   const handleConfirmCreate = useCallback(async () => {
     if (newWatchlistName.trim()) {

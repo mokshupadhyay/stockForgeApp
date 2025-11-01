@@ -60,51 +60,13 @@ export const useWatchlistScreenController = () => {
   const handleCreateWatchlist = () => {
     const defaultName = generateWatchlistName();
 
-    if (Platform.OS === 'ios') {
-      // Use Alert.prompt for iOS
-      Alert.prompt(
-        'Create Watchlist',
-        'Enter a name for your new watchlist',
-        [
-          {
-            text: 'Cancel',
-            style: 'cancel',
-          },
-          {
-            text: 'Create',
-            onPress: (inputName?: string) => {
-              const name = inputName?.trim() || defaultName;
+    setWatchlistName(defaultName);
+    setShowCreateModal(true);
 
-              // Check if watchlist with same name already exists
-              const existingWatchlist = watchlists.find(
-                w => w.name.toLowerCase() === name.toLowerCase(),
-              );
-
-              if (existingWatchlist) {
-                Alert.alert(
-                  'Watchlist Already Exists',
-                  `A watchlist named "${name}" already exists. Please choose a different name.`,
-                  [{ text: 'OK' }],
-                );
-                return;
-              }
-
-              dispatch(createWatchlist({ name }));
-            },
-          },
-        ],
-        'plain-text',
-        defaultName,
-      );
-    } else {
-      // Use custom modal for Android
-      setWatchlistName(defaultName);
-      setShowCreateModal(true);
-      // Focus input after modal opens
-      setTimeout(() => {
-        inputRef.current?.focus();
-      }, 500);
-    }
+    // Optionally focus the input after modal opens
+    setTimeout(() => {
+      inputRef.current?.focus();
+    }, 500);
   };
 
   // Stable callback to prevent re-renders

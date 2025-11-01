@@ -1,4 +1,11 @@
-import React, { FC, memo, Suspense, useCallback } from 'react';
+import React, {
+  createElement,
+  FC,
+  Fragment,
+  memo,
+  Suspense,
+  useCallback,
+} from 'react';
 import {
   View,
   Text,
@@ -104,7 +111,7 @@ const ExploreScreen: FC = memo(() => {
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
             <View style={styles.sectionTitleContainer}>
-              {React.createElement(getSectionIcon(), {
+              {createElement(getSectionIcon(), {
                 size: 20,
                 color: getIconColor(),
                 style: styles.sectionIcon,
@@ -138,7 +145,7 @@ const ExploreScreen: FC = memo(() => {
             ) : (
               <View style={styles.listContainer}>
                 {data.slice(0, 6).map((stock, index) => (
-                  <React.Fragment key={stock.ticker}>
+                  <Fragment key={stock.ticker}>
                     <StockListItem
                       stock={stock}
                       onPress={handleStockPress}
@@ -153,7 +160,7 @@ const ExploreScreen: FC = memo(() => {
                         ]}
                       />
                     )}
-                  </React.Fragment>
+                  </Fragment>
                 ))}
               </View>
             )}
