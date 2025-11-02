@@ -14,13 +14,14 @@ iOS: Watch on Drive
 ### Screenshots
 
 <div align="center">
-<img src="Simulator Screenshot - iPhone 16 Pro - 2025-11-02 at 15.35.02.png" width="200" alt="StockForge iOS Screenshot 4"> 
-<img src="Simulator Screenshot - iPhone 16 Pro - 2025-11-02 at 15.34.14.png" width="200" alt="StockForge iOS Screenshot 1"> 
-<img src="Simulator Screenshot - iPhone 16 Pro - 2025-11-02 at 15.34.23.png" width="200" alt="StockForge iOS Screenshot 2"> 
-<img src="Simulator Screenshot - iPhone 16 Pro - 2025-11-02 at 15.34.45.png" width="200" alt="StockForge iOS Screenshot 3">
-<img src="Screenshot_2025_11_02_15_42_46_49_beec382936f25ac599137d9f424678d8.jpg" width="200" alt="StockForge Android Screenshot 1"> 
-<img 
- src="Screenshot_2025_11_02_15_42_53_25_beec382936f25ac599137d9f424678d8.jpg" width="200" alt="StockForge Android Screenshot 2">
+  <img src="Simulator Screenshot - iPhone 16 Pro - 2025-11-02 at 15.35.02.png" width="200" alt="StockForge iOS Screenshot 4">
+  <img src="Simulator Screenshot - iPhone 16 Pro - 2025-11-02 at 15.34.14.png" width="200" alt="StockForge iOS Screenshot 1">
+  <img src="Simulator Screenshot - iPhone 16 Pro - 2025-11-02 at 15.34.23.png" width="200" alt="StockForge iOS Screenshot 2">
+  <img src="Simulator Screenshot - iPhone 16 Pro - 2025-11-02 at 15.34.45.png" width="200" alt="StockForge iOS Screenshot 3">
+  <img src="Simulator Screenshot - iPhone 16 Pro - 2025-11-02 at 16.23.14.png" width="200" alt="StockForge iOS Screenshot 5">
+  <img src="Simulator Screenshot - iPhone 16 Pro - 2025-11-02 at 16.23.53.png" width="200" alt="StockForge iOS Screenshot 6">
+  <img src="Screenshot_2025_11_02_15_42_46_49_beec382936f25ac599137d9f424678d8.jpg" width="200" alt="StockForge Android Screenshot 1">
+  <img src="Screenshot_2025_11_02_15_42_53_25_beec382936f25ac599137d9f424678d8.jpg" width="200" alt="StockForge Android Screenshot 2">
 </div>
 
 ## 🚀 Features
