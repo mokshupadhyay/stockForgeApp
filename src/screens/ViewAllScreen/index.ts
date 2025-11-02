@@ -1,1 +1,0 @@
-export { ViewAllScreen } from './ViewAllScreen';

@@ -69,7 +69,7 @@ export const styles = StyleSheet.create({
   },
   instructionText: {
     fontSize: 13,
-    textAlign: 'center',
+    textAlign: 'left',
   },
   // Modal styles
   modalOverlay: {

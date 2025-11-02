@@ -135,8 +135,8 @@ const WatchlistScreen: FC = memo(() => {
           <Text
             style={[styles.instructionText, { color: theme.text.tertiary }]}
           >
-            Long press watchlists to delete • Swipe left or long press stocks to
-            remove
+            Long press watchlists to delete • Swipe right or long press stocks
+            to remove
           </Text>
         </View>
       </ScrollView>
